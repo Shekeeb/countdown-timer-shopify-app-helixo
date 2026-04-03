@@ -1,0 +1,18 @@
+{
+  "name": "counter-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:backend":  "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:widget":   "cd widget && npm run watch",
+    "dev": "concurrently --names BACKEND,FRONTEND,WIDGET --prefix-colors cyan,magenta,yellow \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:widget\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

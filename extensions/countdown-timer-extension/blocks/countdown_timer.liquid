@@ -1,0 +1,32 @@
+{%- assign shop_domain = shop.permanent_domain -%}
+{%- assign api_base    = block.settings.api_base_url -%}
+
+{% if api_base != blank and shop_domain != blank %}
+  <div
+    id="countdown-timer-widget"
+    data-shop="{{ shop_domain | escape }}"
+    data-api-base="{{ api_base | escape }}"
+    style="width:100%; min-height:0;"
+    {{ block.shopify_attributes }}
+  ></div>
+
+  {{ 'widget.js' | asset_url | script_tag }}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Countdown Timer",
+  "target": "section",
+  "javascript": "widget.js",
+  "settings": [
+    {
+      "type": "text",
+      "id": "api_base_url",
+      "label": "API Base URL",
+      "info": "Your backend tunnel URL from `shopify app dev`",
+      "placeholder": "https://your-tunnel.trycloudflare.com"
+    }
+  ],
+  "presets": [{ "name": "Countdown Timer" }]
+}
+{% endschema %}

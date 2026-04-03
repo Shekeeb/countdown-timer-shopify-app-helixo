@@ -1,0 +1,10 @@
+node_modules/
+.env
+dist/
+.shopify/
+*.log
+.DS_Store
+backend/.env
+frontend/dist/
+widget/dist/
+extensions/countdown-timer-extension/assets/widget.js
